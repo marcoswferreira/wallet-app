@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL;NON_KEYWORDS=VALUE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+
+  flyway:
+    enabled: false   # Flyway uses PG-specific syntax; DDL handled by Hibernate in tests
+
+app:
+  jwt:
+    secret: "3cfa76ef14937c9e0b6b5b6a35d47f0e2a8d1234567890abcdef0123456789ab"
+    expiration-ms: 86400000
+
+logging:
+  level:
+    com.financial: DEBUG
+    org.hibernate.SQL: OFF
