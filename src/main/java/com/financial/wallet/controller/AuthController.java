@@ -1,7 +1,7 @@
-package com.financial.multitenancy.controller;
+package com.financial.wallet.controller;
 
-import com.financial.multitenancy.dto.AuthRequest;
-import com.financial.multitenancy.infra.security.JwtUtil;
+import com.financial.wallet.dto.AuthRequest;
+import com.financial.wallet.infra.security.JwtUtil;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,7 +17,7 @@ import java.util.UUID;
  * In production this would be replaced by an OAuth2 provider (Keycloak, Auth0,
  * etc.).
  * Issues a JWT containing the {@code tenant_id} claim picked up by {@link
- * com.financial.multitenancy.infra.tenant.TenantFilter}.
+ * com.financial.wallet.infra.tenant.TenantFilter}.
  */
 @RestController
 @RequestMapping("/api/auth")

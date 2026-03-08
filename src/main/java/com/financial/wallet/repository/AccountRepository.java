@@ -1,6 +1,6 @@
-package com.financial.multitenancy.repository;
+package com.financial.wallet.repository;
 
-import com.financial.multitenancy.domain.Account;
+import com.financial.wallet.domain.Account;
 import jakarta.persistence.LockModeType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Lock;

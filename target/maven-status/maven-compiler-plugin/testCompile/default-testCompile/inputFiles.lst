@@ -1,3 +1,3 @@
-C:\repos\my-repos\multi-tenancy-app\src\test\java\com\financial\multitenancy\AccountControllerIntegrationTest.java
-C:\repos\my-repos\multi-tenancy-app\src\test\java\com\financial\multitenancy\ConcurrentWithdrawTest.java
-C:\repos\my-repos\multi-tenancy-app\src\test\java\com\financial\multitenancy\service\AccountServiceTest.java
+C:\repos\my-repos\wallet\src\test\java\com\financial\wallet\AccountControllerIntegrationTest.java
+C:\repos\my-repos\wallet\src\test\java\com\financial\wallet\ConcurrentWithdrawTest.java
+C:\repos\my-repos\wallet\src\test\java\com\financial\wallet\service\AccountServiceTest.java

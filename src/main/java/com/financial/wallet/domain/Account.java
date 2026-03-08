@@ -1,4 +1,4 @@
-package com.financial.multitenancy.domain;
+package com.financial.wallet.domain;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.Filter;
@@ -145,7 +145,7 @@ public class Account {
     /**
      * Debits the account balance.
      * Throws
-     * {@link com.financial.multitenancy.infra.exception.InsufficientFundsException}
+     * {@link com.financial.wallet.infra.exception.InsufficientFundsException}
      * if balance would go negative.
      */
     public void debit(BigDecimal amount) {
@@ -153,7 +153,7 @@ public class Account {
             throw new IllegalArgumentException("Debit amount must be positive");
         }
         if (this.balance.compareTo(amount) < 0) {
-            throw new com.financial.multitenancy.infra.exception.InsufficientFundsException(
+            throw new com.financial.wallet.infra.exception.InsufficientFundsException(
                     "Insufficient funds. Available: " + this.balance + ", requested: " + amount);
         }
         this.balance = this.balance.subtract(amount);

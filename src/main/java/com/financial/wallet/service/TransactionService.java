@@ -1,7 +1,7 @@
-package com.financial.multitenancy.service;
+package com.financial.wallet.service;
 
-import com.financial.multitenancy.dto.TransactionResponse;
-import com.financial.multitenancy.repository.TransactionRepository;
+import com.financial.wallet.dto.TransactionResponse;
+import com.financial.wallet.repository.TransactionRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

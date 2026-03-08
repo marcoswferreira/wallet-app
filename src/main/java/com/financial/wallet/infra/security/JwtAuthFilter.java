@@ -1,4 +1,4 @@
-package com.financial.multitenancy.infra.security;
+package com.financial.wallet.infra.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  * Validates the JWT Bearer token and populates the Spring SecurityContext.
- * Runs before {@link com.financial.multitenancy.infra.tenant.TenantFilter}.
+ * Runs before {@link com.financial.wallet.infra.tenant.TenantFilter}.
  */
 @Component
 public class JwtAuthFilter extends OncePerRequestFilter {

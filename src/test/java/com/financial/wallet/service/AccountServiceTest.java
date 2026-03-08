@@ -1,12 +1,12 @@
-package com.financial.multitenancy.service;
+package com.financial.wallet.service;
 
-import com.financial.multitenancy.domain.Account;
-import com.financial.multitenancy.dto.CreateAccountRequest;
-import com.financial.multitenancy.dto.TransferRequest;
-import com.financial.multitenancy.infra.exception.InsufficientFundsException;
-import com.financial.multitenancy.infra.tenant.TenantContext;
-import com.financial.multitenancy.repository.AccountRepository;
-import com.financial.multitenancy.repository.TransactionRepository;
+import com.financial.wallet.domain.Account;
+import com.financial.wallet.dto.CreateAccountRequest;
+import com.financial.wallet.dto.TransferRequest;
+import com.financial.wallet.infra.exception.InsufficientFundsException;
+import com.financial.wallet.infra.tenant.TenantContext;
+import com.financial.wallet.repository.AccountRepository;
+import com.financial.wallet.repository.TransactionRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

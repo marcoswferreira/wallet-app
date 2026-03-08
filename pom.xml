@@ -13,9 +13,9 @@
     </parent>
 
     <groupId>com.financial</groupId>
-    <artifactId>multi-tenancy-app</artifactId>
+    <artifactId>wallet-app</artifactId>
     <version>1.0.0</version>
-    <name>multi-tenancy-financial-engine</name>
+    <name>wallet-financial-engine</name>
     <description>Multi-tenant financial engine with Optimistic Locking and Hibernate tenant isolation</description>
     <packaging>jar</packaging>
 

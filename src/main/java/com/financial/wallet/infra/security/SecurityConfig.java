@@ -1,6 +1,6 @@
-package com.financial.multitenancy.infra.security;
+package com.financial.wallet.infra.security;
 
-import com.financial.multitenancy.infra.tenant.TenantFilter;
+import com.financial.wallet.infra.tenant.TenantFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

@@ -1,10 +1,10 @@
-package com.financial.multitenancy.controller;
+package com.financial.wallet.controller;
 
-import com.financial.multitenancy.dto.AccountResponse;
-import com.financial.multitenancy.dto.CreateAccountRequest;
-import com.financial.multitenancy.dto.MoneyRequest;
-import com.financial.multitenancy.dto.TransferRequest;
-import com.financial.multitenancy.service.AccountService;
+import com.financial.wallet.dto.AccountResponse;
+import com.financial.wallet.dto.CreateAccountRequest;
+import com.financial.wallet.dto.MoneyRequest;
+import com.financial.wallet.dto.TransferRequest;
+import com.financial.wallet.service.AccountService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

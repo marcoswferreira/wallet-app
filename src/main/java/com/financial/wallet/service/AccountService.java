@@ -1,15 +1,15 @@
-package com.financial.multitenancy.service;
+package com.financial.wallet.service;
 
-import com.financial.multitenancy.domain.Account;
-import com.financial.multitenancy.domain.Transaction;
-import com.financial.multitenancy.domain.TransactionType;
-import com.financial.multitenancy.dto.AccountResponse;
-import com.financial.multitenancy.dto.CreateAccountRequest;
-import com.financial.multitenancy.dto.TransferRequest;
-import com.financial.multitenancy.infra.exception.TenantMismatchException;
-import com.financial.multitenancy.infra.tenant.TenantContext;
-import com.financial.multitenancy.repository.AccountRepository;
-import com.financial.multitenancy.repository.TransactionRepository;
+import com.financial.wallet.domain.Account;
+import com.financial.wallet.domain.Transaction;
+import com.financial.wallet.domain.TransactionType;
+import com.financial.wallet.dto.AccountResponse;
+import com.financial.wallet.dto.CreateAccountRequest;
+import com.financial.wallet.dto.TransferRequest;
+import com.financial.wallet.infra.exception.TenantMismatchException;
+import com.financial.wallet.infra.tenant.TenantContext;
+import com.financial.wallet.repository.AccountRepository;
+import com.financial.wallet.repository.TransactionRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.dao.OptimisticLockingFailureException;
 import org.slf4j.Logger;
@@ -40,7 +40,7 @@ import java.util.UUID;
  * <p>
  * Tenant Isolation:
  * The
- * {@link com.financial.multitenancy.infra.tenant.TenantFilterActivationAspect}
+ * {@link com.financial.wallet.infra.tenant.TenantFilterActivationAspect}
  * activates
  * the Hibernate {@code tenantFilter} before each method, so every query
  * transparently
@@ -70,13 +70,27 @@ public class AccountService {
     public AccountResponse createAccount(CreateAccountRequest request) {
         UUID tenantId = requireTenantId();
 
+        BigDecimal initialBalance = request.initialBalance() != null ? request.initialBalance() : BigDecimal.ZERO;
+
         Account account = Account.builder()
                 .tenantId(tenantId)
                 .userId(request.userId())
-                .balance(request.initialBalance() != null ? request.initialBalance() : BigDecimal.ZERO)
+                .balance(initialBalance)
                 .build();
 
         account = accountRepository.save(account);
+
+        if (initialBalance.compareTo(BigDecimal.ZERO) > 0) {
+            Transaction tx = Transaction.builder()
+                    .tenantId(tenantId)
+                    .account(account)
+                    .type(TransactionType.CREDIT)
+                    .amount(initialBalance)
+                    .description("Initial deposit")
+                    .build();
+            transactionRepository.save(tx);
+        }
+
         log.info("Account created: {} for tenant: {}", account.getId(), tenantId);
         return toResponse(account);
     }
@@ -121,7 +135,7 @@ public class AccountService {
      * Withdraws money from an account.
      * Retried automatically on {@link OptimisticLockingFailureException}.
      * Throws
-     * {@link com.financial.multitenancy.infra.exception.InsufficientFundsException}
+     * {@link com.financial.wallet.infra.exception.InsufficientFundsException}
      * if balance is insufficient.
      */
     @Transactional

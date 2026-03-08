@@ -1,7 +1,7 @@
-package com.financial.multitenancy.infra.tenant;
+package com.financial.wallet.infra.tenant;
 
-import com.financial.multitenancy.domain.Account;
-import com.financial.multitenancy.domain.Transaction;
+import com.financial.wallet.domain.Account;
+import com.financial.wallet.domain.Transaction;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.aspectj.lang.annotation.Aspect;
@@ -25,7 +25,7 @@ public class TenantFilterActivationAspect {
     @PersistenceContext
     private EntityManager entityManager;
 
-    @Before("execution(* com.financial.multitenancy.service..*(..))")
+    @Before("execution(* com.financial.wallet.service..*(..))")
     public void enableTenantFilter() {
         UUID tenantId = TenantContext.getTenantId();
         if (tenantId == null) {

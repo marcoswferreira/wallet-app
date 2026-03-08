@@ -1,6 +1,6 @@
-package com.financial.multitenancy.infra.tenant;
+package com.financial.wallet.infra.tenant;
 
-import com.financial.multitenancy.infra.security.JwtUtil;
+import com.financial.wallet.infra.security.JwtUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

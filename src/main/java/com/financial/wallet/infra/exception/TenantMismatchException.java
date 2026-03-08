@@ -1,4 +1,4 @@
-package com.financial.multitenancy.infra.exception;
+package com.financial.wallet.infra.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

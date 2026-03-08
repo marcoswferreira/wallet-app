@@ -1,6 +1,6 @@
-package com.financial.multitenancy.dto;
+package com.financial.wallet.dto;
 
-import com.financial.multitenancy.domain.TransactionType;
+import com.financial.wallet.domain.TransactionType;
 
 import java.math.BigDecimal;
 import java.time.Instant;

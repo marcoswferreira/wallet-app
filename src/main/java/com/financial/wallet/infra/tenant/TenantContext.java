@@ -1,4 +1,4 @@
-package com.financial.multitenancy.infra.tenant;
+package com.financial.wallet.infra.tenant;
 
 import java.util.UUID;
 

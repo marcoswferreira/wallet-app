@@ -1,10 +1,10 @@
-package com.financial.multitenancy;
+package com.financial.wallet;
 
-import com.financial.multitenancy.domain.Account;
-import com.financial.multitenancy.dto.CreateAccountRequest;
-import com.financial.multitenancy.infra.tenant.TenantContext;
-import com.financial.multitenancy.repository.AccountRepository;
-import com.financial.multitenancy.service.AccountService;
+import com.financial.wallet.domain.Account;
+import com.financial.wallet.dto.CreateAccountRequest;
+import com.financial.wallet.infra.tenant.TenantContext;
+import com.financial.wallet.repository.AccountRepository;
+import com.financial.wallet.service.AccountService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

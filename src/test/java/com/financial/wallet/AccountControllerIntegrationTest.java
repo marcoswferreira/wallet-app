@@ -1,8 +1,8 @@
-package com.financial.multitenancy;
+package com.financial.wallet;
 
-import com.financial.multitenancy.dto.CreateAccountRequest;
-import com.financial.multitenancy.dto.MoneyRequest;
-import com.financial.multitenancy.infra.security.JwtUtil;
+import com.financial.wallet.dto.CreateAccountRequest;
+import com.financial.wallet.dto.MoneyRequest;
+import com.financial.wallet.infra.security.JwtUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

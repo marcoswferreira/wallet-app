@@ -1,4 +1,4 @@
-package com.financial.multitenancy.dto;
+package com.financial.wallet.dto;
 
 import jakarta.validation.constraints.NotBlank;
 

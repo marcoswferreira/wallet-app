@@ -1,9 +1,7 @@
-package com.financial.multitenancy.domain;
+package com.financial.wallet.domain;
 
 import jakarta.persistence.*;
 import org.hibernate.annotations.Filter;
-import org.hibernate.annotations.FilterDef;
-import org.hibernate.annotations.ParamDef;
 import org.hibernate.annotations.Immutable;
 
 import java.math.BigDecimal;

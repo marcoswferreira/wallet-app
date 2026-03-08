@@ -1,7 +1,7 @@
-package com.financial.multitenancy.controller;
+package com.financial.wallet.controller;
 
-import com.financial.multitenancy.dto.TransactionResponse;
-import com.financial.multitenancy.service.TransactionService;
+import com.financial.wallet.dto.TransactionResponse;
+import com.financial.wallet.service.TransactionService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -20,11 +20,10 @@ public class TransactionController {
         this.transactionService = transactionService;
     }
 
-    /** Get paginated transaction history for an account (most recent first). */
     @GetMapping("/{id}/transactions")
     public ResponseEntity<Page<TransactionResponse>> history(
             @PathVariable UUID id,
-            @PageableDefault(size = 20, sort = "createdAt") Pageable pageable) {
+            @PageableDefault(size = 20, sort = "createdAt", direction = org.springframework.data.domain.Sort.Direction.DESC) Pageable pageable) {
         return ResponseEntity.ok(transactionService.getHistory(id, pageable));
     }
 }

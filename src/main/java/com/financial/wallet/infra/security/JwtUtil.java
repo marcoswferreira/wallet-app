@@ -1,4 +1,4 @@
-package com.financial.multitenancy.infra.security;
+package com.financial.wallet.infra.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;

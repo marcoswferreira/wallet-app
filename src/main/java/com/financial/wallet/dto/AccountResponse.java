@@ -1,4 +1,4 @@
-package com.financial.multitenancy.dto;
+package com.financial.wallet.dto;
 
 import java.math.BigDecimal;
 import java.time.Instant;

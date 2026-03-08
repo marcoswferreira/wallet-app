@@ -1,4 +1,4 @@
-package com.financial.multitenancy.domain;
+package com.financial.wallet.domain;
 
 /**
  * Represents the direction of a ledger entry.

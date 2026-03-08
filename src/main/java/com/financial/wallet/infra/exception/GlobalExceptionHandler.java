@@ -1,4 +1,4 @@
-package com.financial.multitenancy.infra.exception;
+package com.financial.wallet.infra.exception;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.persistence.OptimisticLockException;
