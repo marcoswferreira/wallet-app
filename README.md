@@ -131,6 +131,11 @@ cd c:\repos\my-repos\multi-tenancy-app
 mvn spring-boot:run
 ```
 
+### Swagger API Documentation
+Once the application is running, you can access the interactive OpenAPI documentation via Swagger UI:
+- **URL**: `http://localhost:8080/swagger-ui.html`
+- **Authentication**: Click the **"Authorize"** button and provide your JWT token (obtainable via the `/api/auth/token` endpoint).
+
 ---
 
 ## API Usage Examples
@@ -153,6 +158,7 @@ curl -X POST http://localhost:8080/api/accounts \
   -H "Content-Type: application/json" \
   -d '{"userId":"550e8400-e29b-41d4-a716-446655440001","initialBalance":1000.00}'
 ```
+> **Note:** If `initialBalance` > 0, an initial `CREDIT` transaction is automatically created in the history.
 
 ### 3. Deposit
 
